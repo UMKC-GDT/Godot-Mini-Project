@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl37on00b8x2s"]
+[gd_scene load_steps=5 format=3 uid="uid://bl37on00b8x2s"]
 
 [ext_resource type="Texture2D" uid="uid://40vwkireytuj" path="res://Assets/Sprites/pacmanSprites.png" id="1_higp2"]
+[ext_resource type="Script" path="res://pacman_sprite.gd" id="2_llc8x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hgyqu"]
 atlas = ExtResource("1_higp2")
@@ -15,11 +16,13 @@ region = Rect2(94, 1720, 50, 54)
 [node name="PacmanSprites" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(232, 340)
-scale = Vector2(4.85915, 3.90789)
+scale = Vector2(5, 4)
 texture = SubResource("AtlasTexture_hgyqu")
+script = ExtResource("2_llc8x")
 
 [node name="PacmanSprites2" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(733, 327)
-scale = Vector2(6.11, 5.40763)
+position = Vector2(704.625, 327)
+scale = Vector2(5, 4)
 texture = SubResource("AtlasTexture_0qp1e")
+script = ExtResource("2_llc8x")
