@@ -1,20 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3gec0qv1lilf"]
+[gd_scene load_steps=5 format=3 uid="uid://b3gec0qv1lilf"]
 
 [ext_resource type="Script" path="res://Scenes/character_controller.gd" id="1_5fcpk"]
 [ext_resource type="Texture2D" uid="uid://lgdbcxpiftb4" path="res://Assets/Sprites/icon.svg" id="1_eujjr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x5gm5"]
 
-[node name="CharacterController" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_73nac"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eujjr")
+}],
+"loop": true,
+"name": &"mouthClosed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eujjr")
+}],
+"loop": true,
+"name": &"mouthOpen",
+"speed": 5.0
+}]
+
+[node name="CharacterController" type="CharacterBody2D"]
 script = ExtResource("1_5fcpk")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x5gm5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("1_eujjr")
-
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.8147e-06, 3.8147e-06)
+scale = Vector2(0.171875, 0.15625)
+sprite_frames = SubResource("SpriteFrames_73nac")
+animation = &"mouthOpen"
