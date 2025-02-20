@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: int = 100
+@export var speed: int = 80
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,6 +20,7 @@ func _physics_process(delta):
 		velocity.y += 1
 	if Input.is_action_pressed("up"):
 		velocity.y -= 1
+#endregion
 	
 #region Animation Management
 	if velocity.x != 0:
@@ -34,7 +35,6 @@ func _physics_process(delta):
 	
 #region Movement Management
 	if velocity.length() > 0:
-		# look_at(global_position * velocity) #oh this fucked up fucked up
 		velocity = velocity.normalized() * speed
 	position += velocity * delta
 	move_and_slide()
