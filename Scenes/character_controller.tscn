@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3gec0qv1lilf"]
+[gd_scene load_steps=6 format=3 uid="uid://b3gec0qv1lilf"]
 
 [ext_resource type="Script" path="res://Scenes/character_controller.gd" id="1_5fcpk"]
 [ext_resource type="Texture2D" uid="uid://lgdbcxpiftb4" path="res://Assets/Sprites/icon.svg" id="1_eujjr"]
+[ext_resource type="Texture2D" uid="uid://dsdgcy058ysg4" path="res://Assets/Sprites/Shenmue Wallpaper.jpg" id="3_52ad1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x5gm5"]
 
@@ -10,18 +11,13 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_eujjr")
-}],
-"loop": true,
-"name": &"mouthClosed",
-"speed": 5.0
 }, {
-"frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_eujjr")
+"texture": ExtResource("3_52ad1")
 }],
 "loop": true,
-"name": &"mouthOpen",
-"speed": 5.0
+"name": &"mouthCycle",
+"speed": 4.0
 }]
 
 [node name="CharacterController" type="CharacterBody2D"]
@@ -36,4 +32,6 @@ shape = SubResource("CircleShape2D_x5gm5")
 position = Vector2(-3.8147e-06, 3.8147e-06)
 scale = Vector2(0.171875, 0.15625)
 sprite_frames = SubResource("SpriteFrames_73nac")
-animation = &"mouthOpen"
+animation = &"mouthCycle"
+frame = 1
+frame_progress = 0.981445

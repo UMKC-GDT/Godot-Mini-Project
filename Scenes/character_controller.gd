@@ -23,14 +23,12 @@ func _physics_process(delta):
 #endregion
 	
 #region Animation Management
-	if velocity.x != 0:
-		$AnimatedSprite2D.animation = "mouthClosed"
-		$AnimatedSprite2D.flip_h = velocity.x < 0
-	elif velocity.y != 0:
-		$AnimatedSprite2D.animation = "mouthOpen"
+	if velocity.x == 0 && velocity.y == 0:
+		$AnimatedSprite2D.pause()
 	else:
-		$AnimatedSprite2D.stop()
-	$AnimatedSprite2D.flip_v = velocity.y > 0
+		$AnimatedSprite2D.play("mouthCycle")
+		$AnimatedSprite2D.flip_h = velocity.x > 0
+		$AnimatedSprite2D.flip_v = velocity.y > 0
 #endregion
 	
 #region Movement Management
