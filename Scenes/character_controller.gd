@@ -9,17 +9,20 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	velocity = Vector2.ZERO # The player's movement vector.
 	
 #region Input Management
-	if Input.is_action_pressed("right"):
+	if Input.is_action_just_pressed("right"):
 		velocity.x = 1
-	elif Input.is_action_pressed("left"):
+		velocity.y = 0
+	elif Input.is_action_just_pressed("left"):
 		velocity.x = -1
-	elif Input.is_action_pressed("down"):
+		velocity.y = 0
+	elif Input.is_action_just_pressed("down"):
 		velocity.y = 1
-	elif Input.is_action_pressed("up"):
+		velocity.x = 0
+	elif Input.is_action_just_pressed("up"):
 		velocity.y = -1
+		velocity.x = 0
 #endregion
 	
 #region Animation Management

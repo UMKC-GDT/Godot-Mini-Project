@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://lgdbcxpiftb4" path="res://Assets/Sprites/icon.svg" id="1_eujjr"]
 [ext_resource type="Texture2D" uid="uid://dsdgcy058ysg4" path="res://Assets/Sprites/Shenmue Wallpaper.jpg" id="3_52ad1"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x5gm5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nw1d2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_73nac"]
 animations = [{
@@ -17,15 +17,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"mouthCycle",
-"speed": 3.5
+"speed": 4.5
 }]
 
 [node name="CharacterController" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_5fcpk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_x5gm5")
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_nw1d2")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 
@@ -34,3 +36,6 @@ position = Vector2(-3.8147e-06, 3.8147e-06)
 scale = Vector2(0.171875, 0.15625)
 sprite_frames = SubResource("SpriteFrames_73nac")
 animation = &"mouthCycle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nw1d2")
