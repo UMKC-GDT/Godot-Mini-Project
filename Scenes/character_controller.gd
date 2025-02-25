@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	scale.x = -1
+	scale.x = -scale.x
 	#pass # Replace with function body.
 
 
