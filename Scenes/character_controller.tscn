@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3gec0qv1lilf"]
+[gd_scene load_steps=8 format=3 uid="uid://b3gec0qv1lilf"]
 
 [ext_resource type="Script" path="res://Scenes/character_controller.gd" id="1_5fcpk"]
 [ext_resource type="Texture2D" uid="uid://lgdbcxpiftb4" path="res://Assets/Sprites/icon.svg" id="1_eujjr"]
 [ext_resource type="Texture2D" uid="uid://dsdgcy058ysg4" path="res://Assets/Sprites/Shenmue Wallpaper.jpg" id="3_52ad1"]
+[ext_resource type="AudioStream" uid="uid://b7qi8wynvb270" path="res://Audio/wakawaka.mp3" id="4_pwpdv"]
+[ext_resource type="AudioStream" uid="uid://dtvhxt7dpur7m" path="res://Audio/intro.wav" id="5_460tp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nw1d2"]
 
@@ -39,3 +41,9 @@ animation = &"mouthCycle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nw1d2")
+
+[node name="wakawakaplayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pwpdv")
+
+[node name="introplayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_460tp")
