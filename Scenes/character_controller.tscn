@@ -17,7 +17,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"mouthCycle",
-"speed": 4.0
+"speed": 3.5
 }]
 
 [node name="CharacterController" type="CharacterBody2D"]
@@ -34,5 +34,3 @@ position = Vector2(-3.8147e-06, 3.8147e-06)
 scale = Vector2(0.171875, 0.15625)
 sprite_frames = SubResource("SpriteFrames_73nac")
 animation = &"mouthCycle"
-frame = 1
-frame_progress = 0.981445

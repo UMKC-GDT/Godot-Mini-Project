@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: int = 80
+@export var speed: int = 80 #Speed in units per second
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,17 +13,18 @@ func _physics_process(delta):
 	
 #region Input Management
 	if Input.is_action_pressed("right"):
-		velocity.x += 1
+		velocity.x = 1
 	elif Input.is_action_pressed("left"):
-		velocity.x -= 1
+		velocity.x = -1
 	elif Input.is_action_pressed("down"):
-		velocity.y += 1
+		velocity.y = 1
 	elif Input.is_action_pressed("up"):
-		velocity.y -= 1
+		velocity.y = -1
 #endregion
 	
 #region Animation Management
 	if velocity.x == 0 && velocity.y == 0:
+		$AnimatedSprite2D.set_frame_and_progress(0, 0.85)
 		$AnimatedSprite2D.pause()
 	else:
 		$AnimatedSprite2D.play("mouthCycle")
@@ -37,8 +38,7 @@ func _physics_process(delta):
 #endregion
 	
 #region Movement Management
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
+	velocity = velocity.normalized() * speed
 	position += velocity * delta
 	move_and_slide()
 #endregion
