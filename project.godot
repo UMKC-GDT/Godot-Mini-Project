@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="UMKC GDT Godot Project"
-run/main_scene="res://Scenes/character_controller.tscn"
+run/main_scene="res://Scenes/mainGame.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://Assets/Sprites/icon.svg"
 
