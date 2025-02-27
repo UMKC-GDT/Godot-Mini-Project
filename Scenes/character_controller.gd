@@ -1,9 +1,13 @@
 extends CharacterBody2D
 
 @export var speed: int = 80 #Speed in units per second
+@onready var wakawaka = $wakawakaplayer
+@onready var intro = $introplayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	intro.play()
+	#pass # Replace with function body.
 	scale.x = -scale.x
 	#pass # Replace with function body.
 
@@ -15,15 +19,23 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("right"):
 		velocity.x = 1
 		velocity.y = 0
+		if not wakawaka.playing:
+			wakawaka.play()
 	elif Input.is_action_just_pressed("left"):
 		velocity.x = -1
 		velocity.y = 0
+		if not wakawaka.playing:
+			wakawaka.play()
 	elif Input.is_action_just_pressed("down"):
 		velocity.y = 1
 		velocity.x = 0
+		if not wakawaka.playing:
+			wakawaka.play()
 	elif Input.is_action_just_pressed("up"):
 		velocity.y = -1
 		velocity.x = 0
+		if not wakawaka.playing:
+			wakawaka.play()
 #endregion
 	
 #region Animation Management
