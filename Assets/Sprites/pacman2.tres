@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d1d4h52ep88yq"]
+
+[ext_resource type="Texture2D" uid="uid://cp5bd4q0jt2h7" path="res://Assets/Sprites/pacmanSprites.png" id="1_ipnhj"]
+
+[resource]
+atlas = ExtResource("1_ipnhj")
+region = Rect2(13, 1720, 54, 54)

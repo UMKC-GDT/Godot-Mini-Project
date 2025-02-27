@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://c00wrmbk7kje8"]
+
+[ext_resource type="Script" path="res://Scenes/side_teleporter.gd" id="1_2iwjp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8o0tb"]
+
+[node name="Side Teleporter" type="Node2D"]
+script = ExtResource("1_2iwjp")
+
+[node name="Left Teleporter" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Teleporter"]
+shape = SubResource("RectangleShape2D_8o0tb")
+
+[node name="Left Spawn Point" type="Node2D" parent="Left Teleporter"]
+position = Vector2(28, 0)
+
+[node name="Right Teleporter" type="Area2D" parent="."]
+position = Vector2(550, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Teleporter"]
+shape = SubResource("RectangleShape2D_8o0tb")
+
+[node name="Right Spawn Point" type="Node2D" parent="Right Teleporter"]
+position = Vector2(-28, 0)
+
+[connection signal="area_entered" from="Left Teleporter" to="." method="_on_left_teleporter_area_entered"]
+[connection signal="area_entered" from="Right Teleporter" to="." method="_on_right_teleporter_area_entered"]

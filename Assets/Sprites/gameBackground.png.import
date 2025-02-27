@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsdgcy058ysg4"
-path="res://.godot/imported/Shenmue Wallpaper.jpg-f024248addebb8df0479b050d9fc8b44.ctex"
+uid="uid://cy0k41h33y7v7"
+path="res://.godot/imported/gameBackground.png-2a0c001782e6b6c6b2beb44ddaea97d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Shenmue Wallpaper.jpg"
-dest_files=["res://.godot/imported/Shenmue Wallpaper.jpg-f024248addebb8df0479b050d9fc8b44.ctex"]
+source_file="res://Assets/Sprites/gameBackground.png"
+dest_files=["res://.godot/imported/gameBackground.png-2a0c001782e6b6c6b2beb44ddaea97d8.ctex"]
 
 [params]
 

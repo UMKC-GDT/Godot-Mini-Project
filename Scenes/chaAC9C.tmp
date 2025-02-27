@@ -1,16 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3gec0qv1lilf"]
+[gd_scene load_steps=6 format=3 uid="uid://b3gec0qv1lilf"]
 
 [ext_resource type="Script" path="res://Scenes/character_controller.gd" id="1_5fcpk"]
-
-[ext_resource type="AudioStream" uid="uid://b7qi8wynvb270" path="res://Audio/wakawaka.mp3" id="4_pwpdv"]
-[ext_resource type="AudioStream" uid="uid://dtvhxt7dpur7m" path="res://Audio/intro.wav" id="5_460tp"]
-
 [ext_resource type="Texture2D" uid="uid://d1d4h52ep88yq" path="res://Assets/Sprites/pacman2.tres" id="2_bjkmg"]
 [ext_resource type="Texture2D" uid="uid://2em7qp01vyu4" path="res://Assets/Sprites/pacman1.tres" id="3_k6yl7"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nw1d2"]
-size = Vector2(45, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_73nac"]
 animations = [{
@@ -27,11 +21,8 @@ animations = [{
 }]
 
 [node name="CharacterController" type="CharacterBody2D"]
-top_level = true
-scale = Vector2(0.5, 0.5)
 motion_mode = 1
 script = ExtResource("1_5fcpk")
-speed = 70
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -41,15 +32,9 @@ shape = SubResource("RectangleShape2D_nw1d2")
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(41.1797, 43.8906)
 sprite_frames = SubResource("SpriteFrames_73nac")
 animation = &"mouthCycle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 0)
 shape = SubResource("RectangleShape2D_nw1d2")
-
-[node name="wakawakaplayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_pwpdv")
-
-[node name="introplayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_460tp")
