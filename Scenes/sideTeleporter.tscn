@@ -13,7 +13,7 @@ script = ExtResource("1_2iwjp")
 shape = SubResource("RectangleShape2D_8o0tb")
 
 [node name="Left Spawn Point" type="Node2D" parent="Left Teleporter"]
-position = Vector2(33, 0)
+position = Vector2(28, 0)
 
 [node name="Right Teleporter" type="Area2D" parent="."]
 position = Vector2(550, 0)
@@ -22,7 +22,7 @@ position = Vector2(550, 0)
 shape = SubResource("RectangleShape2D_8o0tb")
 
 [node name="Right Spawn Point" type="Node2D" parent="Right Teleporter"]
-position = Vector2(-33, 0)
+position = Vector2(-28, 0)
 
 [connection signal="area_entered" from="Left Teleporter" to="." method="_on_left_teleporter_area_entered"]
 [connection signal="area_entered" from="Right Teleporter" to="." method="_on_right_teleporter_area_entered"]
