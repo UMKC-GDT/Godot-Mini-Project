@@ -9,6 +9,7 @@ func _ready():
 	intro.play()
 	#pass # Replace with function body.
 	scale.x = -scale.x
+	velocity.x = 1
 	#pass # Replace with function body.
 
 
