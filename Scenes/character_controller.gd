@@ -14,29 +14,64 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(position,  position)
 	
 #region Input Management
 	if Input.is_action_just_pressed("right"):
-		velocity.x = 1
-		velocity.y = 0
+		query = PhysicsRayQueryParameters2D.create(position, Vector2(position.x +50, position.y))
+		query.exclude = [self]
+			
+		var result = space_state.intersect_ray(query)#result of the ray cast
+	
+		if !result:
+			velocity.x = 1
+			velocity.y = 0
 		if not wakawaka.playing:
 			wakawaka.play()
 	elif Input.is_action_just_pressed("left"):
-		velocity.x = -1
-		velocity.y = 0
+		#cast ray 50 units infront of player 
+		query = PhysicsRayQueryParameters2D.create(position, Vector2(position.x -50, position.y))
+		query.exclude = [self] #ignore players collider
+		
+		var result = space_state.intersect_ray(query)#result of the ray cast
+	
+		if !result:
+			velocity.x = -1
+			velocity.y = 0
+		
+
 		if not wakawaka.playing:
 			wakawaka.play()
 	elif Input.is_action_just_pressed("down"):
-		velocity.y = 1
-		velocity.x = 0
+		query = PhysicsRayQueryParameters2D.create(position, Vector2(position.x, position.y +50))
+		query.exclude = [self]
+		var result = space_state.intersect_ray(query)#result of the ray cast
+	
+		if !result:
+			velocity.y = 1
+			velocity.x = 0
 		if not wakawaka.playing:
 			wakawaka.play()
 	elif Input.is_action_just_pressed("up"):
-		velocity.y = -1
-		velocity.x = 0
+		
+		query = PhysicsRayQueryParameters2D.create(position, Vector2(position.x, position.y -50))
+		query.exclude = [self]
+		var result = space_state.intersect_ray(query)#result of the ray cast
+	
+		if !result:
+			velocity.y = -1
+			velocity.x = 0
 		if not wakawaka.playing:
 			wakawaka.play()
 #endregion
+
+	
+	var result = space_state.intersect_ray(query)
+	
+	if result:
+		print("Hit at point: ", result.position)
+		print("Player point:", position)
 	
 #region Animation Management
 	if velocity.x == 0 && velocity.y == 0:
