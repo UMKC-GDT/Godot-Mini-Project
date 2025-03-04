@@ -4,3 +4,6 @@
 
 [node name="ScoreManager" type="Node"]
 script = ExtResource("1_kxgeb")
+
+[node name="ComboTimer" type="Timer" parent="."]
+wait_time = 3.0

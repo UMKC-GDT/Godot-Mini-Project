@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ba4nrrqykx1nw"]
+[gd_scene load_steps=6 format=3 uid="uid://ba4nrrqykx1nw"]
 
 [ext_resource type="PackedScene" uid="uid://c00wrmbk7kje8" path="res://Scenes/sideTeleporter.tscn" id="1_qg6xp"]
 [ext_resource type="PackedScene" uid="uid://b3gec0qv1lilf" path="res://Scenes/character_controller.tscn" id="1_xnwy6"]
 [ext_resource type="PackedScene" uid="uid://byq62hx5gluf" path="res://Scenes/tileset.tscn" id="2_nhgeu"]
 [ext_resource type="Texture2D" uid="uid://cy0k41h33y7v7" path="res://Assets/Sprites/gameBackground.png" id="4_a3q5h"]
+[ext_resource type="PackedScene" uid="uid://dqyx8df1gun01" path="res://Scenes/score_manager.tscn" id="5_i6akf"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -24,3 +25,5 @@ position = Vector2(569, 326)
 z_index = -50
 position = Vector2(569, 342)
 texture = ExtResource("4_a3q5h")
+
+[node name="ScoreManager" parent="." instance=ExtResource("5_i6akf")]
