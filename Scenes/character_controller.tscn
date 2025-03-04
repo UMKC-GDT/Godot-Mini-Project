@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3gec0qv1lilf"]
+[gd_scene load_steps=9 format=3 uid="uid://b3gec0qv1lilf"]
 
 [ext_resource type="Script" uid="uid://6vg8vv1x7lhh" path="res://Scenes/character_controller.gd" id="1_5fcpk"]
 [ext_resource type="Texture2D" uid="uid://d1d4h52ep88yq" path="res://Assets/Sprites/pacman2.tres" id="2_bjkmg"]
@@ -23,6 +23,9 @@ animations = [{
 "speed": 4.5
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yhnaq"]
+radius = 26.5
+
 [node name="CharacterController" type="CharacterBody2D"]
 top_level = true
 scale = Vector2(0.5, 0.5)
@@ -42,8 +45,7 @@ sprite_frames = SubResource("SpriteFrames_73nac")
 animation = &"mouthCycle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 0)
-shape = SubResource("RectangleShape2D_nw1d2")
+shape = SubResource("CircleShape2D_yhnaq")
 
 [node name="wakawakaplayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_pwpdv")
